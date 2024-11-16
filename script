@@ -1,0 +1,142 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "flame hub",
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "how has your day been?",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "flame hub"
+   },
+   Discord = {
+      Enabled = Enabled,
+      Invite = "PSyx9vzg", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "flame hub",
+      Subtitle = "made by flamesum",
+      Note = "https://discord.gg/PSyx9vzg",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/5H7SV5e4"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Main", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("The Scripts")
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "Speed",
+   Range = {0, 300},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Aimbot and ESP",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "RemoteSpy and Other Things",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/debugnation/main/decompilers%20and%20debugging/Debuggers.txt"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Hitbox Expand (DOES NOT WORK ON EVERY GAME)",
+   Callback = function()
+        -- leave a like pls
+
+
+_G.HeadSize = 50
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+   end,
+})
+
+local OthersTab = Window:CreateTab("TSB", nil) -- Title, Image
+local MainSection = OthersTab:CreateSection("The TSB Scripts")
+
+local Button = OthersTab:CreateButton({
+   Name = "Gojo V2 (Use Saitama)",
+   Callback = function()
+        getgenv().morph = true -- turn false to true if you want custom accessories
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/refs/heads/main/LatestV2.lua"))()
+   end,
+})
+
+local Button = OthersTab:CreateButton({
+   Name = "Limitless GUI (not mine)",
+   Callback = function()
+        getgenv().morph = true -- turn false to true if you want custom accessories
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/Wi-sp/Limitless-legacy/refs/heads/main/GUI")() 
+   end,
+})
+
+local Button = OthersTab:CreateButton({
+   Name = "Shinjuku Yuji moveset (use Garou)",
+   Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yuji%20early%20access'))()
+   end,
+})
+
+local TeleTab = Window:CreateTab("Blox Fruits", nil) -- Title, Image
+local MainSection = TeleTab:CreateSection("The Blox Fruit Scripts")
+
+local Button = TeleTab:CreateButton({
+   Name = "Mama Hub (not mine)",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MAMAhub1/Mmahub/main/README.md"))()
+   end,
+})
+
+local MurdTab = Window:CreateTab("MM2", nil) -- Title, Image
+local MainSection = MurdTab:CreateSection("MM2 scripts")
+
+local Button = MurdTab:CreateButton({
+   Name = "X hub)",
+   Callback = function()
+        for _, url in pairs({
+    "https://raw.githubusercontent.com/Dekos-lgbty/halloweens/refs/heads/main/autofarms",
+    "https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"
+}) do
+    loadstring(game:HttpGet(url, true))()
+end
+   end,
+})
+
